@@ -62,6 +62,9 @@ void incr_counter(void (*cb)()) {
         assert(moves < MAX_MOVES);
         histogram[moves] ++;
         incr_counter(print_histogram);
+#ifdef ALSO_PRINT_ALL
+        std::cout << moves << " " << b.cells << std::endl;
+#endif
     }
 
     void main_play_boards() {
